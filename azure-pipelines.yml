@@ -8,6 +8,16 @@ trigger:
 
 pool:
   vmImage: 'macOS-latest'
+ 
+variables:
+  - name: 'DOCKER_REGISTRY'
+    value: 'docker.io'
+  - name: 'DOCKER_IMAGE_NAME' 
+    value: 'my-docker-image'
+  - name: 'DOCKER_IMAGE_TAG'
+    value: 'latest'
+  - name: 'DOCKER_IMAGE_NAME_WITH_TAG'
+    value: '${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}'
 
 steps:
 - script: echo Hello, world!
